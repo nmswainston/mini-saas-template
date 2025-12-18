@@ -12,11 +12,35 @@ dist
 dist-ssr
 *.local
 
-# Editor directories and files
+# Env files (never commit)
+.env
+.env.*
+*.env
+*.env.*
+
+# Build outputs / coverage
+build
+coverage
+.netlify
+.vercel
+
+# Editor state
 .vscode/*
 !.vscode/extensions.json
+*.code-workspace
 .idea
+
+# Cursor / AI tooling (local state only)
+.cursor/
+.cursor-cache/
+.cursor-tmp/
+.ai/
+.ai-cache/
+.prompt-cache/
+
+# OS files
 .DS_Store
+Thumbs.db
 *.suo
 *.ntvs*
 *.njsproj

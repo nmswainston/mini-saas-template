@@ -16,7 +16,7 @@ export interface AISuggestion {
  * Generate AI suggestions based on user data
  * Placeholder: Replace with actual AI service call
  */
-export async function generateAISuggestions(_context: string): Promise<AISuggestion[]> {
+export async function generateAISuggestions(context: string): Promise<AISuggestion[]> {
   // TODO: Replace with actual AI service integration
   // Example: OpenAI, Anthropic, or your custom AI service
   return new Promise((resolve) => {
@@ -24,7 +24,7 @@ export async function generateAISuggestions(_context: string): Promise<AISuggest
       resolve([
         {
           id: '1',
-          text: 'Consider optimizing your workflow based on recent activity patterns',
+          text: `Consider optimizing your workflow based on recent activity patterns${context ? ` (${context})` : ''}`,
           confidence: 0.85,
           type: 'optimization',
         },
@@ -43,11 +43,14 @@ export async function generateAISuggestions(_context: string): Promise<AISuggest
  * Analyze user data and provide insights
  * Placeholder: Replace with actual AI service call
  */
-export async function analyzeData(_data: unknown): Promise<string> {
+export async function analyzeData(data: unknown): Promise<string> {
   // TODO: Replace with actual AI analysis
   return new Promise((resolve) => {
     setTimeout(() => {
-      resolve('AI analysis would appear here. Connect your AI service to enable this feature.');
+      const hasData = data !== null && data !== undefined;
+      resolve(
+        `AI analysis would appear here. Connect your AI service to enable this feature.${hasData ? ' (Input received.)' : ''}`,
+      );
     }, 500);
   });
 }

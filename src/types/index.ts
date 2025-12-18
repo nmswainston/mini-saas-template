@@ -1,10 +1,2 @@
-export interface Item {
-  id: string;
-  name: string;
-  description: string;
-  status: 'active' | 'inactive' | 'pending';
-  createdAt: string;
-}
-
-export type Theme = 'light' | 'dark';
+export type { Item, Theme } from '../shared/types';
 

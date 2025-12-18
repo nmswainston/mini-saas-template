@@ -1,13 +1,13 @@
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
-import { ThemeProvider } from './contexts/ThemeContext';
-import { AuthProvider } from './lib/auth';
-import { Layout } from './components/layout/Layout';
-import { ProtectedRoute } from './components/layout/ProtectedRoute';
-import { Home } from './pages/Home';
-import { Dashboard } from './pages/Dashboard';
-import { Items } from './pages/Items';
-import { Pricing } from './pages/Pricing';
-import { Settings } from './pages/Settings';
+import { ThemeProvider } from './shared/theme/ThemeContext';
+import { AuthProvider } from './shared/auth/AuthProvider';
+import { Layout } from './shared/components/layout/Layout';
+import { ProtectedRoute } from './shared/auth/ProtectedRoute';
+import { Home } from './features/home/pages/Home';
+import { Dashboard } from './features/dashboard/pages/Dashboard';
+import { Items } from './features/items/pages/Items';
+import { Pricing } from './features/pricing/pages/Pricing';
+import { Settings } from './features/settings/pages/Settings';
 
 function App() {
   return (

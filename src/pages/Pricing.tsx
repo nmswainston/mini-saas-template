@@ -1,6 +1,6 @@
 import { Card } from '../components/ui/Card';
 import { Button } from '../components/ui/Button';
-import { useStripe } from '../hooks/useStripe';
+import { useMockCheckout } from '../shared/billing/useMockCheckout';
 import { Check } from 'lucide-react';
 
 const plans = [
@@ -53,7 +53,7 @@ const plans = [
 ];
 
 export function Pricing() {
-  const { handleCheckout, loading } = useStripe();
+  const { handleCheckout, loading } = useMockCheckout();
 
   return (
     <div className="space-y-6">

@@ -5,7 +5,7 @@ A complete, production-ready template for building micro SaaS products. This sta
 ## Features
 
 - ⚡ **React + Vite** - Fast development and build times
-- 🎨 **Tailwind CSS v3** - Modern, utility-first styling with dark mode support
+- 🎨 **Tailwind CSS v4** - Modern, utility-first styling with dark mode support
 - 🔐 **Clerk Authentication** - Complete authentication solution
 - 💳 **Stripe Integration** - Ready-to-use payment processing
 - 📊 **Dashboard** - Beautiful dashboard with stats and activity
