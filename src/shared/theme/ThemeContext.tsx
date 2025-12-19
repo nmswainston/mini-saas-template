@@ -1,7 +1,7 @@
 import { useLayoutEffect, useState } from 'react';
 import type { ReactNode } from 'react';
 import type { Theme } from '../types';
-import { ThemeContext } from './theme-context';
+import { ThemeContext } from './context';
 
 export function ThemeProvider({ children }: { children: ReactNode }) {
   const [theme, setTheme] = useState<Theme>(() => {

@@ -1,5 +1,7 @@
 import type { Item } from '../../../shared/types';
 import { Input } from '../../../shared/components/ui/Input';
+import { Textarea } from '../../../shared/components/ui/Textarea';
+import { Select } from '../../../shared/components/ui/Select';
 import { Button } from '../../../shared/components/ui/Button';
 
 interface ItemFormProps {
@@ -29,33 +31,23 @@ export function ItemForm({ item, onSubmit, onCancel }: ItemFormProps) {
         required
         placeholder="Enter item name"
       />
-      <div>
-        <label className="block text-sm font-medium mb-1 text-gray-700 dark:text-gray-300">
-          Description
-        </label>
-        <textarea
-          name="description"
-          defaultValue={item?.description ?? ''}
-          required
-          rows={4}
-          className="w-full px-4 py-2 border border-gray-300 rounded-lg transition-colors dark:bg-gray-800 dark:border-gray-600 dark:text-white placeholder:text-gray-400 dark:placeholder:text-gray-500 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2 focus-visible:ring-offset-white dark:focus-visible:ring-offset-gray-900"
-          placeholder="Enter item description"
-        />
-      </div>
-      <div>
-        <label className="block text-sm font-medium mb-1 text-gray-700 dark:text-gray-300">
-          Status
-        </label>
-        <select
-          name="status"
-          defaultValue={item?.status ?? 'active'}
-          className="w-full px-4 py-2 border border-gray-300 rounded-lg transition-colors bg-white dark:bg-gray-800 dark:border-gray-600 dark:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2 focus-visible:ring-offset-white dark:focus-visible:ring-offset-gray-900"
-        >
-          <option value="active">Active</option>
-          <option value="inactive">Inactive</option>
-          <option value="pending">Pending</option>
-        </select>
-      </div>
+      <Textarea
+        label="Description"
+        name="description"
+        defaultValue={item?.description ?? ''}
+        required
+        rows={4}
+        placeholder="Enter item description"
+      />
+      <Select
+        label="Status"
+        name="status"
+        defaultValue={item?.status ?? 'active'}
+      >
+        <option value="active">Active</option>
+        <option value="inactive">Inactive</option>
+        <option value="pending">Pending</option>
+      </Select>
       <div className="flex justify-end gap-2">
         <Button type="button" variant="outline" onClick={onCancel}>
           Cancel
