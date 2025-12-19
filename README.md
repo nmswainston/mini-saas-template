@@ -140,11 +140,21 @@ To add AI features:
 
 ### Netlify
 
+The project is pre-configured for Netlify deployment with `netlify.toml`.
+
 1. Push your code to GitHub
-2. Create a new site in Netlify
-3. Add environment variables
-4. Set build command: `npm run build`
-5. Set publish directory: `dist`
+2. Go to [Netlify](https://netlify.com) and create a new site
+3. Connect your GitHub repository
+4. Netlify will automatically detect the `netlify.toml` configuration
+5. Add environment variables in Netlify dashboard:
+   - `VITE_CLERK_PUBLISHABLE_KEY` - Your Clerk publishable key
+   - `VITE_STRIPE_PUBLISHABLE_KEY` - Your Stripe publishable key
+6. Click "Deploy site"
+
+The `netlify.toml` file handles:
+- Build command: `npm run build`
+- Publish directory: `dist`
+- SPA routing: All routes redirect to `index.html` for client-side routing
 
 ## License
 
